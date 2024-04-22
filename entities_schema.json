@@ -1,0 +1,80 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "chargerId": {"type": "string"},
+            "name": {"type": "string"},
+            "type": {"type": "string"},
+            "model": {"type": "string"},
+            "location": {
+                "type": "object",
+                "properties": {
+                    "locationId": {"type": "string"},
+                    "name": {"type": "string"},
+                    "latitude": {"type": "number"},
+                    "longitude": {"type": "number"},
+                    "isoCountryCode": {"type": "string"},
+                    "stateOrRegion": {"type": "string"},
+                    "city": {"type": "string"},
+                    "zipOrPostalCode": {"type": "string"},
+                    "streetAddress": {"type": "string"},
+                    "timeZone": {"type": "string"}
+                },
+                "required": ["locationId", "name", "latitude", "longitude", "isoCountryCode", "stateOrRegion", "city", "zipOrPostalCode", "streetAddress", "timeZone"]
+            },
+            "ports": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "connectorTypes": {"type": "array", "items": {"type": "string"}},
+                        "status": {"type": "string"},
+                        "maxPowerKilowatts": {"type": "number"},
+                        "connectorLocations": {"type": "array", "items": {"type": "string"}},
+                        "portId": {"type": "string"}
+                    },
+                    "required": ["connectorTypes", "status", "maxPowerKilowatts", "connectorLocations", "portId"]
+                }
+            },
+            "imageUrl": {"type": "string"},
+            "description": {"type": "string"},
+            "currentPrice": {
+                "type": "object",
+                "properties": {
+                    "currency": {"type": "string"},
+                    "flatRate": {"type": "number"},
+                    "idleRate": {"type": "number"},
+                    "ratePerKilowattHour": {"type": "number"},
+                    "ratePerEffectiveHour": {"type": "number"},
+                    "ratePerHourPluggedIn": {"type": "number"},
+                    "pricingType": {"type": "string"},
+                    "unitPrice": {"type": "number"}
+                },
+                "required": ["currency", "flatRate", "idleRate", "ratePerKilowattHour", "ratePerEffectiveHour", "ratePerHourPluggedIn", "pricingType", "unitPrice"]
+            },
+            "owner": {
+                "type": "object",
+                "properties": {
+                    "type": {"type": "string"},
+                    "id": {"type": "string"}
+                },
+                "required": ["type", "id"]
+            },
+            "directions": {"type": "string"},
+            "contactInfo": {"type": "string"},
+            "maintenanceFlag": {"type": "boolean"},
+            "whiteLabellingId": {"type": "string"},
+            "whiteLabellingName": {"type": "string"},
+            "userHasAccess": {"type": "boolean"},
+            "priceSchedule": {
+                "type": "object",
+                "properties": {
+                    "type": {"type": "string"}
+                },
+                "required": ["type"]
+            }
+        },
+        "required": ["chargerId", "name", "type", "model", "location", "ports", "imageUrl", "description", "currentPrice", "owner", "directions", "contactInfo", "maintenanceFlag", "whiteLabellingId", "whiteLabellingName", "userHasAccess", "priceSchedule"]
+    }
+}
